@@ -3,7 +3,7 @@ locals {
   tamr_dataproc_cluster_subnetwork_uri  = var.tamr_dataproc_cluster_subnetwork_uri == "" ? var.tamr_instance_subnet : var.tamr_dataproc_cluster_subnetwork_uri
   tamr_dataproc_cluster_service_account = var.tamr_dataproc_cluster_service_account == "" ? var.tamr_instance_service_account : var.tamr_dataproc_cluster_service_account
 
-  tamr_es_apihost = var.tamr_es_apihost == "" ? "${google_compute_address.tamr_ip.address}:9200" : var.tamr_es_apihost
+  tamr_es_apihost = var.tamr_es_apihost == "" ? "${var.tamr_instance_ip}:9200" : var.tamr_es_apihost
   remote_es       = var.tamr_es_apihost == "" ? false : true
 
   tamr_bigtable_project_id = var.tamr_bigtable_project_id == "" ? var.tamr_instance_project : var.tamr_bigtable_project_id
@@ -84,12 +84,6 @@ data "template_file" "default_tamr_config" {
     tamr_license_key  = var.tamr_license_key
     tamr_json_logging = var.tamr_json_logging
   }
-}
-
-resource "google_compute_address" "tamr_ip" {
-  name         = "${var.tamr_instance_name}-ip"
-  subnetwork   = var.tamr_instance_subnet
-  address_type = "INTERNAL"
 }
 
 resource "local_file" "populated_config_file" {

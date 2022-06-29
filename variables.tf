@@ -18,6 +18,11 @@ variable "tamr_instance_zone" {
   description = "zone to deploy tamr vm"
 }
 
+variable "tamr_instance_ip" {
+  type        = string
+  description = "internal ip of tamr instance"
+}
+
 # NOTE: for right now requiring this to be set, in the future will use either
 # a publish tamr image or a default ubuntu image
 variable "tamr_instance_image" {
