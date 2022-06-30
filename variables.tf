@@ -18,9 +18,9 @@ variable "tamr_instance_zone" {
   description = "zone to deploy tamr vm"
 }
 
-variable "tamr_instance_ip" {
+variable "tamr_instance_internal_ip" {
   type        = string
-  description = "internal ip of tamr instance"
+  description = "internal ip of tamr vm"
 }
 
 # NOTE: for right now requiring this to be set, in the future will use either
