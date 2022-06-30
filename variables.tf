@@ -1,17 +1,6 @@
 #
 # Tamr VM
 #
-variable "tamr_instance_name" {
-  default     = "tamr"
-  type        = string
-  description = "Name of the VM running tamr"
-}
-
-variable "tamr_instance_machine_type" {
-  default     = "n1-highmem-8"
-  type        = string
-  description = "machine type to use for tamr vm"
-}
 
 variable "tamr_instance_zone" {
   type        = string
@@ -25,22 +14,6 @@ variable "tamr_instance_internal_ip" {
 
 # NOTE: for right now requiring this to be set, in the future will use either
 # a publish tamr image or a default ubuntu image
-variable "tamr_instance_image" {
-  type        = string
-  description = "Image to use for boot disk"
-}
-
-variable "tamr_instance_disk_type" {
-  default     = "pd-ssd"
-  type        = string
-  description = "boot disk type"
-}
-
-variable "tamr_instance_disk_size" {
-  default     = 100
-  type        = number
-  description = "size of the boot disk"
-}
 
 variable "tamr_instance_service_account" {
   type        = string
@@ -52,12 +25,6 @@ variable "tamr_instance_subnet" {
   description = "subnetwork to attach instance too"
 }
 
-variable "tamr_instance_deletion_protection" {
-  type        = bool
-  description = "Enabled deletion protection for the tamr VM"
-  default     = true
-}
-
 variable "tamr_external_ip" {
   type        = bool
   description = "Create and attach an external ip to tamr VM"
@@ -67,24 +34,6 @@ variable "tamr_external_ip" {
 variable "tamr_instance_project" {
   type        = string
   description = "The project to launch the tamr VM instance in."
-}
-
-variable "tamr_instance_tags" {
-  default     = []
-  type        = list(string)
-  description = "list of network tags to attach to instance"
-}
-
-variable "tamr_instance_install_directory" {
-  # Get it?, DataTamer :p
-  default     = "/data/tamr"
-  type        = string
-  description = "directory to install tamr into"
-}
-
-variable "tamr_zip_uri" {
-  type        = string
-  description = "gcs location to download tamr zip from"
 }
 
 #
@@ -352,12 +301,6 @@ variable "tamr_json_logging" {
   default     = false
   type        = bool
   description = "Toggle json formatting for tamr logs."
-}
-
-variable "labels" {
-  default     = {}
-  type        = map(string)
-  description = "labels to attach to created resources"
 }
 
 variable "tamr_config" {

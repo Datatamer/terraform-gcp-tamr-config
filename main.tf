@@ -3,7 +3,7 @@ locals {
   tamr_dataproc_cluster_subnetwork_uri  = var.tamr_dataproc_cluster_subnetwork_uri == "" ? var.tamr_instance_subnet : var.tamr_dataproc_cluster_subnetwork_uri
   tamr_dataproc_cluster_service_account = var.tamr_dataproc_cluster_service_account == "" ? var.tamr_instance_service_account : var.tamr_dataproc_cluster_service_account
 
-  tamr_es_apihost = var.tamr_es_apihost == "" ? "${var.tamr_instance_ip}:9200" : var.tamr_es_apihost
+  tamr_es_apihost = var.tamr_es_apihost == "" ? "${var.tamr_instance_internal_ip}:9200" : var.tamr_es_apihost
   remote_es       = var.tamr_es_apihost == "" ? false : true
 
   tamr_bigtable_project_id = var.tamr_bigtable_project_id == "" ? var.tamr_instance_project : var.tamr_bigtable_project_id
