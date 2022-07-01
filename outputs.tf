@@ -1,9 +1,9 @@
-output "null_resource_id" {
-  value       = null_resource.foo.id
-  description = "An arbitrary value that changes each time the resource is replaced."
+output "tamr_config_file" {
+  value       = data.template_file.default_tamr_config.rendered
+  description = "full tamr config file"
 }
 
-output "example_value" {
-  value       = var.example
-  description = "Example variable."
+output "tmpl_dataproc_config" {
+  value       = data.template_file.default_dataproc.rendered
+  description = "dataproc config"
 }
