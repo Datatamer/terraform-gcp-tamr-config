@@ -25,12 +25,6 @@ variable "tamr_instance_subnet" {
   description = "subnetwork to attach instance too"
 }
 
-variable "tamr_external_ip" {
-  type        = bool
-  description = "Create and attach an external ip to tamr VM"
-  default     = false
-}
-
 variable "tamr_instance_project" {
   type        = string
   description = "The project to launch the tamr VM instance in."

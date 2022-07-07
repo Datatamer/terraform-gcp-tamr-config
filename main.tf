@@ -12,7 +12,6 @@ locals {
 
   dataproc_config  = var.tamr_dataproc_cluster_config == "" ? data.template_file.default_dataproc.rendered : var.tamr_dataproc_cluster_config
   tamr_config      = var.tamr_config == "" ? data.template_file.default_tamr_config.rendered : var.tamr_config
-  external_ip      = var.tamr_external_ip == true ? 1 : 0
   spark_properties = var.tamr_spark_properties_override == "" ? file("${path.module}/spark_properties.json") : var.tamr_spark_properties_override
 }
 
@@ -89,11 +88,11 @@ data "template_file" "default_tamr_config" {
 resource "local_file" "populated_config_file" {
   count    = 1
   filename = "test_config"
-  content  = data.template_file.default_tamr_config.rendered
+  content  = local.tamr_config
 }
 
 resource "local_file" "populated_dataproc_file" {
   count    = 1
   filename = "test_dataproc"
-  content  = data.template_file.default_dataproc.rendered
+  content  = local.dataproc_config
 }
