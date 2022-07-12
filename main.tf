@@ -16,7 +16,7 @@ locals {
 }
 
 data "template_file" "default_dataproc" {
-  template = yamlencode("${path.module}/dataproc.yaml.tmpl")
+  template = yamldecode("${path.module}/dataproc.yaml.tmpl")
   vars = {
     subnetwork_uri       = local.tamr_dataproc_cluster_subnetwork_uri
     service_account      = local.tamr_dataproc_cluster_service_account
@@ -40,7 +40,7 @@ data "template_file" "default_dataproc" {
 }
 
 data "template_file" "default_tamr_config" {
-  template = yamlencode("${path.module}/tamr_config.yaml.tmpl")
+  template = yamldecode("${path.module}/tamr_config.yaml.tmpl")
   vars = {
     tamr_hbase_namespace      = var.tamr_hbase_namespace
     tamr_bigtable_project_id  = local.tamr_bigtable_project_id
