@@ -78,27 +78,3 @@ locals {
     tamr_json_logging              = var.tamr_json_logging
   })
 }
-
-resource "google_storage_bucket_object" "populated_config_file" {
-  name    = "test_config"
-  content = local.tamr_config
-  bucket  = var.tamr_filesystem_bucket
-}
-
-resource "google_storage_bucket_object" "populated_dataproc_file" {
-  name    = "test_dataproc"
-  content = local.dataproc_config
-  bucket  = var.tamr_filesystem_bucket
-}
-
-resource "local_file" "populated_config_file_local" {
-  count    = 1
-  filename = "test_config"
-  content  = local.tamr_config
-}
-
-resource "local_file" "populated_dataproc_file_local" {
-  count    = 1
-  filename = "test_dataproc"
-  content  = local.dataproc_config
-}
