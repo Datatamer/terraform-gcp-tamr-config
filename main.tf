@@ -85,7 +85,19 @@ data "template_file" "default_tamr_config" {
   }
 }
 
-resource "local_file" "populated_config_file" {
+resource "google_storage_bucket_object" "populated_config_file" {
+  name    = "test_config"
+  content = local.tamr_config
+  bucket  = var.tamr_filesystem_bucket
+}
+
+resource "google_storage_bucket_object" "populated_dataproc_file" {
+  name    = "test_dataproc"
+  content = local.dataproc_config
+  bucket  = var.tamr_filesystem_bucket
+}
+
+/*resource "local_file" "populated_config_file" {
   count    = 1
   filename = "test_config"
   content  = local.tamr_config
@@ -95,4 +107,4 @@ resource "local_file" "populated_dataproc_file" {
   count    = 1
   filename = "test_dataproc"
   content  = local.dataproc_config
-}
+}*/
