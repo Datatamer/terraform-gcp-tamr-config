@@ -97,14 +97,14 @@ resource "google_storage_bucket_object" "populated_dataproc_file" {
   bucket  = var.tamr_filesystem_bucket
 }
 
-/*resource "local_file" "populated_config_file" {
+resource "local_file" "populated_config_file_local" {
   count    = 1
   filename = "test_config"
   content  = local.tamr_config
 }
 
-resource "local_file" "populated_dataproc_file" {
+resource "local_file" "populated_dataproc_file_local" {
   count    = 1
   filename = "test_dataproc"
   content  = local.dataproc_config
-}*/
+}
