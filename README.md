@@ -27,10 +27,7 @@ This modules creates:
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| local | n/a |
-| template | n/a |
+No provider.
 
 ## Inputs
 
