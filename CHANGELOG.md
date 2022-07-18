@@ -1,4 +1,4 @@
-# Tamr Terraform Template Repo
+# GCP Tamr VM module
 
-## v0.1.0 - Feb 25th 2021
+## v0.1.0 - July 18th 2022
 * Initializing project

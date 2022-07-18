@@ -1,8 +1,9 @@
-output "null_resource_id" {
-  value       = module.minimal.null_resource_id
-  description = "An arbitrary value that changes each time the resource is replaced."
+output "tamr_config_file" {
+  value       = module.minimal.tamr_config_file
+  description = "full tamr config file"
 }
-output "example_value" {
-  value       = module.minimal.example_value
-  description = "Example variable."
+
+output "tmpl_dataproc_config" {
+  value       = module.minimal.tmpl_dataproc_config
+  description = "dataproc config"
 }
