@@ -10,15 +10,11 @@ locals {
   tamr_cloud_sql_project   = var.tamr_cloud_sql_project == "" ? var.tamr_instance_project : var.tamr_cloud_sql_project
   tamr_dataproc_project_id = var.tamr_dataproc_project_id == "" ? var.tamr_instance_project : var.tamr_dataproc_project_id
 
-  dataproc_config  = var.tamr_dataproc_cluster_config == "" ? data.template_file.default_dataproc.rendered : var.tamr_dataproc_cluster_config
-  tamr_config      = var.tamr_config == "" ? data.template_file.default_tamr_config.rendered : var.tamr_config
-  external_ip      = var.tamr_external_ip == true ? 1 : 0
+  dataproc_config  = var.tamr_dataproc_cluster_config == "" ? local.default_dataproc : var.tamr_dataproc_cluster_config
+  tamr_config      = var.tamr_config == "" ? local.default_tamr_config : var.tamr_config
   spark_properties = var.tamr_spark_properties_override == "" ? file("${path.module}/spark_properties.json") : var.tamr_spark_properties_override
-}
 
-data "template_file" "default_dataproc" {
-  template = yamlencode("${path.module}/dataproc.yaml.tmpl")
-  vars = {
+  default_dataproc = templatefile("${path.module}/dataproc.yaml.tmpl", {
     subnetwork_uri       = local.tamr_dataproc_cluster_subnetwork_uri
     service_account      = local.tamr_dataproc_cluster_service_account
     zone                 = local.tamr_dataproc_cluster_zone
@@ -37,12 +33,9 @@ data "template_file" "default_dataproc" {
     worker_preemptible_machine_type   = var.tamr_dataproc_cluster_worker_preemptible_machine_type
     worker_preemptible_num_instances  = var.tamr_dataproc_cluster_worker_preemptible_num_instances
     worker_preemptible_num_local_ssds = var.tamr_dataproc_cluster_worker_preemptible_num_local_ssds
-  }
-}
+  })
 
-data "template_file" "default_tamr_config" {
-  template = yamlencode("${path.module}/tamr_config.yaml.tmpl")
-  vars = {
+  default_tamr_config = templatefile("${path.module}/tamr_config.yaml.tmpl", {
     tamr_hbase_namespace      = var.tamr_hbase_namespace
     tamr_bigtable_project_id  = local.tamr_bigtable_project_id
     tamr_bigtable_instance_id = var.tamr_bigtable_instance_id
@@ -83,17 +76,5 @@ data "template_file" "default_tamr_config" {
     # miscellaneous
     tamr_license_key  = var.tamr_license_key
     tamr_json_logging = var.tamr_json_logging
-  }
-}
-
-resource "local_file" "populated_config_file" {
-  count    = 1
-  filename = "test_config"
-  content  = data.template_file.default_tamr_config.rendered
-}
-
-resource "local_file" "populated_dataproc_file" {
-  count    = 1
-  filename = "test_dataproc"
-  content  = data.template_file.default_dataproc.rendered
+  })
 }

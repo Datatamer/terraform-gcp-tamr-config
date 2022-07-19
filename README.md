@@ -27,10 +27,7 @@ This modules creates:
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| local | n/a |
-| template | n/a |
+No provider.
 
 ## Inputs
 
@@ -45,15 +42,12 @@ This modules creates:
 | tamr\_dataproc\_bucket | GCS bucket to use for the tamr dataproc cluster | `string` | n/a | yes |
 | tamr\_dataproc\_region | Region the dataproc uses. | `string` | n/a | yes |
 | tamr\_filesystem\_bucket | GCS bucket to use for the tamr default file system | `string` | n/a | yes |
-| tamr\_instance\_image | Image to use for boot disk | `string` | n/a | yes |
-| tamr\_instance\_ip | internal ip of tamr instance | `string` | n/a | yes |
+| tamr\_instance\_internal\_ip | internal ip of tamr vm | `string` | n/a | yes |
 | tamr\_instance\_project | The project to launch the tamr VM instance in. | `string` | n/a | yes |
 | tamr\_instance\_service\_account | email of service account to attach to the tamr instance | `string` | n/a | yes |
 | tamr\_instance\_subnet | subnetwork to attach instance too | `string` | n/a | yes |
 | tamr\_instance\_zone | zone to deploy tamr vm | `string` | n/a | yes |
 | tamr\_sql\_password | password for the cloud sql user | `string` | n/a | yes |
-| tamr\_zip\_uri | gcs location to download tamr zip from | `string` | n/a | yes |
-| labels | labels to attach to created resources | `map(string)` | `{}` | no |
 | tamr\_bigtable\_project\_id | The google project that the bigtable instance lives in. If not set will use the tamr\_instance\_project as the default value. | `string` | `""` | no |
 | tamr\_cloud\_sql\_project | project containing cloudsql instance. If not set will use the tamr\_instance\_project as the default value. | `string` | `""` | no |
 | tamr\_config | Override generated tamr configuration. The tamr configuration is specified using a yaml file, in the format that is documented (https://docs.tamr.com/previous/docs/configuration-configuring-unify#section-setting-configuration-variables) for configuring “many variables” at once. | `string` | `""` | no |
@@ -79,15 +73,7 @@ This modules creates:
 | tamr\_es\_socket\_timeout | Defines the socket timeout for Elasticsearch clients, in milliseconds. This is the timeout for waiting for data or, put differently, a maximum period of inactivity between two consecutive data packets. A timeout value of zero is interpreted as an infinite timeout. A negative value is interpreted as undefined (system default).  The default value is 900000, i.e., fifteen minutes. | `number` | `900000` | no |
 | tamr\_es\_ssl\_enabled | Whether to connect to Elasticsearch over https or not.  Default is false (http). | `bool` | `false` | no |
 | tamr\_es\_user | Username to use to authenticate to Elasticsearch.  Not required unless the Elasticsearch cluster you're using has security and authentication enabled. | `string` | `""` | no |
-| tamr\_external\_ip | Create and attach an external ip to tamr VM | `bool` | `false` | no |
 | tamr\_hbase\_namespace | HBase namespace to user, for bigtable this will be the table prefix. | `string` | `"ns0"` | no |
-| tamr\_instance\_deletion\_protection | Enabled deletion protection for the tamr VM | `bool` | `true` | no |
-| tamr\_instance\_disk\_size | size of the boot disk | `number` | `100` | no |
-| tamr\_instance\_disk\_type | boot disk type | `string` | `"pd-ssd"` | no |
-| tamr\_instance\_install\_directory | directory to install tamr into | `string` | `"/data/tamr"` | no |
-| tamr\_instance\_machine\_type | machine type to use for tamr vm | `string` | `"n1-highmem-8"` | no |
-| tamr\_instance\_name | Name of the VM running tamr | `string` | `"tamr"` | no |
-| tamr\_instance\_tags | list of network tags to attach to instance | `list(string)` | `[]` | no |
 | tamr\_json\_logging | Toggle json formatting for tamr logs. | `bool` | `false` | no |
 | tamr\_license\_key | Set a tamr license key | `string` | `""` | no |
 | tamr\_spark\_driver\_memory | Amount of memory spark should allocate to spark driver | `string` | `"12G"` | no |
