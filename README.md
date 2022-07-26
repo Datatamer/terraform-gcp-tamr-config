@@ -2,13 +2,6 @@
 This terraform module automates populating some Tamr config variables that are generated as outputs from other GCP scale-out modules.
 
 # Examples
-## Basic
-Inline example implementation of the module.  This is the most basic example of what it would look like to use this module.
-```
-module "minimal" {
-  source = "git::https://github.com/Datatamer/terraform-template-repo?ref=x.y.z"
-}
-```
 ## Minimal
 Smallest complete fully working example. This example might require extra resources to run the example.
 - [Minimal](https://github.com/Datatamer/terraform-template-repo/tree/master/examples/minimal)

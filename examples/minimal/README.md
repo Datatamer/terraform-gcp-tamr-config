@@ -15,7 +15,7 @@ No input.
 
 | Name | Description |
 |------|-------------|
-| example\_value | Example variable. |
-| null\_resource\_id | An arbitrary value that changes each time the resource is replaced. |
+| tamr\_config\_file | full tamr config file |
+| tmpl\_dataproc\_config | dataproc config |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

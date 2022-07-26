@@ -1,4 +1,4 @@
 # GCP Tamr Configuration module
 
-## v0.1.0 - July 18th 2022
-* Initializing project
+## v1.0.0 - July 18th 2022
+* initialize project for generating tamr config file
