@@ -1,5 +1,8 @@
 # GCP Tamr Configuration module
 
+## v2.0.0 - September 2th 2022
+* Removes unused `tamr_config` from main module
+
 ## v1.0.2 - August 12th 2022
 * fix `TAMR_PERSISTENCE_DB_URL` to correctly use the `sslmode` parameter instead of `ssl`. Relevant postgresql docs [here](https://www.postgresql.org/docs/current/libpq-ssl.html#LIBPQ-SSL-SSLMODE-STATEMENTS).
 
