@@ -29,4 +29,3 @@ module "minimal" {
   # filesystem
   tamr_filesystem_bucket = "<bucket_name>"
 }
-

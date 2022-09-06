@@ -235,6 +235,7 @@ variable "tamr_sql_user" {
 variable "tamr_sql_password" {
   type        = string
   description = "password for the cloud sql user"
+  sensitive   = true
 }
 
 #
@@ -259,7 +260,7 @@ variable "tamr_es_user" {
 }
 
 variable "tamr_es_password" {
-  default     = ""
+  default     = null
   type        = string
   description = "Password to use to authenticate to Elasticsearch, using basic authentication.  Not required unless the Elasticsearch cluster you're using has security and authentication enabled.  The value passed in may be encrypted."
 }
@@ -295,12 +296,6 @@ variable "tamr_json_logging" {
   default     = false
   type        = bool
   description = "Toggle json formatting for tamr logs."
-}
-
-variable "tamr_config" {
-  default     = ""
-  type        = string
-  description = "Override generated tamr configuration. The tamr configuration is specified using a yaml file, in the format that is documented (https://docs.tamr.com/previous/docs/configuration-configuring-unify#section-setting-configuration-variables) for configuring “many variables” at once."
 }
 
 #
