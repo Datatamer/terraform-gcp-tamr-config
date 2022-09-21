@@ -1,6 +1,9 @@
 # GCP Tamr Configuration module
 
-## v2.0.0 - September 2th 2022
+## v2.0.1 - September 21st 2022
+* Change default value of `tamr_es_password` to empty string to match template expectation
+
+## v2.0.0 - September 2nd 2022
 * Removes unused `tamr_config` from main module
 
 ## v1.0.2 - August 12th 2022

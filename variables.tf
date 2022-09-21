@@ -260,7 +260,7 @@ variable "tamr_es_user" {
 }
 
 variable "tamr_es_password" {
-  default     = null
+  default     = ""
   type        = string
   description = "Password to use to authenticate to Elasticsearch, using basic authentication.  Not required unless the Elasticsearch cluster you're using has security and authentication enabled.  The value passed in may be encrypted."
 }
