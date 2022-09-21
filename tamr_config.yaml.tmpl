@@ -65,7 +65,7 @@ TAMR_BACKUP_GSUTIL_ENABLED: true
 TAMR_ES_APIHOST: ${tamr_es_apihost}
 TAMR_ES_NETWORK_HOST: _site_
 %{ if tamr_es_user != "" }TAMR_ES_USER: ${tamr_es_user}%{ endif }
-%{ if tamr_es_password != "" }TAMR_ES_PASSWORD: ${tamr_es_password}%{ endif }
+%{ if tamr_es_password != null }TAMR_ES_PASSWORD: ${tamr_es_password}%{ endif }
 TAMR_ES_SSL_ENABLED: ${tamr_es_ssl_enabled}
 TAMR_ES_INDEX_NUMBER_OF_SHARDS: ${tamr_es_number_of_shards}
 TAMR_ES_SOCKET_TIMEOUT: ${tamr_es_socket_timeout}
