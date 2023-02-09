@@ -32,6 +32,8 @@ locals {
     worker_preemptible_machine_type   = var.tamr_dataproc_cluster_worker_preemptible_machine_type
     worker_preemptible_num_instances  = var.tamr_dataproc_cluster_worker_preemptible_num_instances
     worker_preemptible_num_local_ssds = var.tamr_dataproc_cluster_worker_preemptible_num_local_ssds
+
+    dataproc_image_version = var.tamr_dataproc_image_version
   })
 
   default_tamr_config = templatefile("${path.module}/tamr_config.yaml.tmpl", {

@@ -176,6 +176,13 @@ variable "tamr_dataproc_cluster_worker_preemptible_num_local_ssds" {
   description = "Number of localssds to attach to each preemptible worker node. This only used if using the built in tamr_dataproc_cluster_config configuration"
 }
 
+variable "tamr_dataproc_image_version" {
+  default     = "1.4"
+  type        = string
+  description = "Dataproc image versionmage "
+}
+
+
 # spark settings
 variable "tamr_spark_driver_memory" {
   default     = "12G"
