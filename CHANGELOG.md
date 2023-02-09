@@ -1,5 +1,8 @@
 # GCP Tamr Configuration module
 
+## v2.1.0 - February 9th 2023
+* Adds `tamr_dataproc_image_version` to make Dataproc version configurable
+
 ## v2.0.1 - September 21st 2022
 * Handle null default value of `tamr_es_password` in template file
 

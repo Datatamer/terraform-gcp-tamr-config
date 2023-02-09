@@ -7,7 +7,7 @@ gceClusterConfig:
   metadata:
     GCS_CONNECTOR_VERSION: 2.2.0
 softwareConfig:
-  imageVersion: 1.4
+  imageVersion: ${dataproc_image_version}
   properties:
     dataproc:job.history.to-gcs.enabled: true
     dataproc:dataproc.logging.stackdriver.enable: ${stackdriver_logging}
