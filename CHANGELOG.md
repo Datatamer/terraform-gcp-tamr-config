@@ -1,5 +1,10 @@
 # GCP Tamr Configuration module
 
+## v2.2.0 - February 9th 2023
+* Following optional input variables now available
+  * dataproc_network_tags
+* Allows flexibility for the user of this module to supply network tags for dataproc
+
 ## v2.1.0 - February 9th 2023
 * Adds `tamr_dataproc_image_version` to make Dataproc version configurable
 

@@ -14,13 +14,14 @@ locals {
   spark_properties = var.tamr_spark_properties_override == "" ? file("${path.module}/spark_properties.json") : var.tamr_spark_properties_override
 
   default_dataproc = templatefile("${path.module}/dataproc.yaml.tmpl", {
-    subnetwork_uri       = local.tamr_dataproc_cluster_subnetwork_uri
-    service_account      = local.tamr_dataproc_cluster_service_account
-    zone                 = local.tamr_dataproc_cluster_zone
-    region               = var.tamr_dataproc_region
-    stackdriver_logging  = var.tamr_dataproc_cluster_enable_stackdriver_logging
-    version              = var.tamr_dataproc_cluster_version
-    tamr_dataproc_bucket = var.tamr_dataproc_bucket
+    subnetwork_uri        = local.tamr_dataproc_cluster_subnetwork_uri
+    service_account       = local.tamr_dataproc_cluster_service_account
+    zone                  = local.tamr_dataproc_cluster_zone
+    region                = var.tamr_dataproc_region
+    stackdriver_logging   = var.tamr_dataproc_cluster_enable_stackdriver_logging
+    version               = var.tamr_dataproc_cluster_version
+    tamr_dataproc_bucket  = var.tamr_dataproc_bucket
+    dataproc_network_tags = var.dataproc_network_tags
 
     master_instance_type = var.tamr_dataproc_cluster_master_instance_type
     master_disk_size     = var.tamr_dataproc_cluster_master_disk_size
