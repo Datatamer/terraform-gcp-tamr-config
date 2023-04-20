@@ -3,6 +3,7 @@ gceClusterConfig:
   zoneUri: ${zone}
   subnetworkUri: ${subnetwork_uri}
   internalIpOnly: true
+  tags: ${yamlencode(tamr_instance_tags)}
   serviceAccount: ${service_account}
   metadata:
     GCS_CONNECTOR_VERSION: 2.2.0
