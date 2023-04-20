@@ -3,7 +3,9 @@ gceClusterConfig:
   zoneUri: ${zone}
   subnetworkUri: ${subnetwork_uri}
   internalIpOnly: true
-  tags: ${yamlencode(dataproc_network_tags)}
+  tags:
+  %{ for tag in tags} - ${dataproc_network_tags}
+  %{ endfor }
   serviceAccount: ${service_account}
   metadata:
     GCS_CONNECTOR_VERSION: 2.2.0
