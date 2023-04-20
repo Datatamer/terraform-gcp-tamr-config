@@ -21,7 +21,7 @@ locals {
     stackdriver_logging  = var.tamr_dataproc_cluster_enable_stackdriver_logging
     version              = var.tamr_dataproc_cluster_version
     tamr_dataproc_bucket = var.tamr_dataproc_bucket
-    tamr_instance_tags   = var.tamr_instance_tags
+    dataproc_network_tags= var.dataproc_network_tags
 
     master_instance_type = var.tamr_dataproc_cluster_master_instance_type
     master_disk_size     = var.tamr_dataproc_cluster_master_disk_size

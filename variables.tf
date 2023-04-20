@@ -30,12 +30,6 @@ variable "tamr_instance_project" {
   description = "The project to launch the tamr VM instance in."
 }
 
-variable "tamr_instance_tags" {
-  default     = []
-  type        = list(string)
-  description = "list of network tags to attach to instance"
-}
-
 #
 # Bigtable
 #
@@ -73,6 +67,12 @@ variable "tamr_bigtable_max_nodes" {
 #
 # dataproc
 #
+variable "dataproc_network_tags" {
+  default     = []
+  type        = list(string)
+  description = "list of network tags to attach to the dataproc nodes"
+}
+
 variable "tamr_dataproc_project_id" {
   default     = ""
   type        = string
