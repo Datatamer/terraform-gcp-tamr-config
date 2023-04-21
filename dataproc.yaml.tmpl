@@ -4,7 +4,7 @@ gceClusterConfig:
   subnetworkUri: ${subnetwork_uri}
   internalIpOnly: true
   tags:
-  %{ for tag in tags} - ${dataproc_network_tags}
+  %{ for tag in dataproc_network_tags} - ${tag}
   %{ endfor }
   serviceAccount: ${service_account}
   metadata:

@@ -1,6 +1,9 @@
 # GCP Tamr Configuration module
 
-## v2.2.0 - February 9th 2023
+## v2.2.1 - April 21st 2022
+* fix dataproc.yaml.tmpl to use data_proc_network_tags instead of tags
+
+## v2.2.0 - April 20th 2023
 * Following optional input variables now available
   * dataproc_network_tags
 * Allows flexibility for the user of this module to supply network tags for dataproc
