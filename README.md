@@ -41,6 +41,7 @@ No provider.
 | tamr\_instance\_subnet | subnetwork to attach instance too | `string` | n/a | yes |
 | tamr\_instance\_zone | zone to deploy tamr vm | `string` | n/a | yes |
 | tamr\_sql\_password | password for the cloud sql user | `string` | n/a | yes |
+| dataproc\_network\_tags | list of network tags to attach to the dataproc nodes | `list(string)` | `[]` | no |
 | tamr\_bigtable\_project\_id | The google project that the bigtable instance lives in. If not set will use the tamr\_instance\_project as the default value. | `string` | `""` | no |
 | tamr\_cloud\_sql\_project | project containing cloudsql instance. If not set will use the tamr\_instance\_project as the default value. | `string` | `""` | no |
 | tamr\_dataproc\_cluster\_config | If you do not want to use the default dataproc configuration template, pass in a complete dataproc configuration file to variable.<br>If you are passing in a dataproc configure it should not be left padded, we will handle that inside of our template. It is expected to<br>a yaml document of a dataproc cluster config<br>Refrence spec is https://cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig | `string` | `""` | no |
@@ -49,7 +50,7 @@ No provider.
 | tamr\_dataproc\_cluster\_master\_instance\_type | Instance type to use as dataproc master This only used if using the built in tamr\_dataproc\_cluster\_config configuration | `string` | `"n1-highmem-4"` | no |
 | tamr\_dataproc\_cluster\_service\_account | Service account to attach to dataproc workers. If not set will use the tamr\_instance\_service\_account as the default value. This only used if using the built in tamr\_dataproc\_cluster\_config configuration | `string` | `""` | no |
 | tamr\_dataproc\_cluster\_subnetwork\_uri | Subnetwork URI for dataproc to use. If not set will use the tamr\_instance\_subnet as the default value. This only used if using the built in tamr\_dataproc\_cluster\_config configuration | `string` | `""` | no |
-| tamr\_dataproc\_cluster\_version | Version of dataproc to use. This only used if using the built in tamr\_dataproc\_cluster\_config configuration | `string` | `"1.4"` | no |
+| tamr\_dataproc\_cluster\_version | Version of dataproc to use. This only used if using the built in tamr\_dataproc\_cluster\_config configuration | `string` | `"2.0"` | no |
 | tamr\_dataproc\_cluster\_worker\_machine\_type | machine type of default worker pool. This only used if using the built in tamr\_dataproc\_cluster\_config configuration | `string` | `"n1-standard-16"` | no |
 | tamr\_dataproc\_cluster\_worker\_num\_instances | Number of default workers to use. This only used if using the built in tamr\_dataproc\_cluster\_config configuration | `number` | `4` | no |
 | tamr\_dataproc\_cluster\_worker\_num\_local\_ssds | Number of localssds to attach to each worker node. This only used if using the built in tamr\_dataproc\_cluster\_config configuration | `number` | `2` | no |
@@ -57,6 +58,7 @@ No provider.
 | tamr\_dataproc\_cluster\_worker\_preemptible\_num\_instances | Number of preemptible workers to use. This only used if using the built in tamr\_dataproc\_cluster\_config configuration | `number` | `0` | no |
 | tamr\_dataproc\_cluster\_worker\_preemptible\_num\_local\_ssds | Number of localssds to attach to each preemptible worker node. This only used if using the built in tamr\_dataproc\_cluster\_config configuration | `number` | `2` | no |
 | tamr\_dataproc\_cluster\_zone | Zone to launch dataproc cluster into. If not set will use the tamr\_instance\_zone as the default value. This only used if using the built in tamr\_dataproc\_cluster\_config configuration | `string` | `""` | no |
+| tamr\_dataproc\_image\_version | Dataproc image versionmage | `string` | `"2.0"` | no |
 | tamr\_dataproc\_project\_id | Project for the dataproc cluster. If not set will use the tamr\_instance\_project as the default value. | `string` | `""` | no |
 | tamr\_es\_apihost | The hostname and port of the REST API endpoint of the Elasticsearch cluster to use. If unset will use < ip of vm>:9200 | `string` | `""` | no |
 | tamr\_es\_enabled | Whether Tamr will index user data in Elasticsearch or not.  Elasticsearch is used to power Tamr's interactive data UI, so when this is set to false Tamr will run 'headless,' that is, without its core UI capabilities.  It can be useful to disable Elasticsearch in production settings where the models are trained on a separate instance and the goal is to maximize pipeline throughput. | `bool` | `true` | no |
