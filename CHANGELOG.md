@@ -1,6 +1,12 @@
 # GCP Tamr Configuration module
 
-## v2.2.1 - April 21st 2022
+## v3.0.0 - April 28th 2023
+* Following optional input variables have updated defaults
+  * tamr_dataproc_cluster_version
+  * tamr_dataproc_image_version
+* update dataproc image to use image version with Spark 3
+
+## v2.2.1 - April 21st 2023
 * fix dataproc.yaml.tmpl to use data_proc_network_tags instead of tags
 
 ## v2.2.0 - April 20th 2023
