@@ -251,6 +251,11 @@ variable "tamr_sql_password" {
   sensitive   = true
 }
 
+variable "tamr_cloud_sql_sslmode" {
+  type        = string
+  default     = "disable"
+  description = "if ssl is disabled or not.Possible values include disable , allow , prefer , require , verify-ca and verify-full"
+}
 #
 # elasticsearch
 #
