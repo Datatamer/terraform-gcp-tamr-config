@@ -64,6 +64,7 @@ locals {
     tamr_cloud_sql_name     = var.tamr_cloud_sql_name
     tamr_sql_user           = var.tamr_sql_user
     tamr_sql_password       = var.tamr_sql_password
+    tamr_cloud_sql_sslmode  = var.tamr_cloud_sql_sslmode
     # elastic
     remote_es                = local.remote_es
     tamr_es_enabled          = var.tamr_es_enabled
