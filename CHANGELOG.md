@@ -1,5 +1,8 @@
 # GCP Tamr Configuration module
 
+## v3.1.0 - February 5th 2023
+* Add variable of sslmode
+
 ## v3.0.0 - April 28th 2023
 * Following optional input variables have updated defaults
   * tamr_dataproc_cluster_version
