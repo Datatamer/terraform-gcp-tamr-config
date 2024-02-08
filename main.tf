@@ -58,7 +58,7 @@ locals {
     tamr_spark_executor_instances = var.tamr_spark_executor_instances
     # ditto, comment about indent() above
     tamr_spark_properties_override = indent(4, "\n${local.spark_properties}")
-    tamr_spark_cloudsql_jar = var.tamr_spark_cloudsql_jar
+    tamr_spark_cloudsql_jar        = var.tamr_spark_cloudsql_jar
     # sql
     tamr_cloud_sql_project  = local.tamr_cloud_sql_project
     tamr_cloud_sql_location = var.tamr_cloud_sql_location
