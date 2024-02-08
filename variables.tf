@@ -220,6 +220,12 @@ variable "tamr_spark_properties_override" {
   description = "json blob of spark properties to override, if not set will use a default set of properties that should work for most use cases"
 }
 
+variable "tamr_spark_cloudsql_jar" {
+  default     = "/data/tamr/tamr/libs/postgres-socket-factory-1.3.4.jar"
+  type        = string
+  description = "Path to cloudsql socket factory jar. If default does not exist, provide custom value to a path that does exist."
+}
+
 #
 # Cloud SQL (PostgreSQL)
 #
@@ -255,6 +261,12 @@ variable "tamr_cloud_sql_sslmode" {
   type        = string
   default     = "disable"
   description = "if ssl is disabled or not.Possible values include disable , allow , prefer , require , verify-ca and verify-full"
+}
+
+variable "tamr_cloud_sql_jdbc_url" {
+  type        = string
+  default     = "jdbc:postgresql://google/doit"
+  description = "jdbc url to connect to cloud sql. Default is set for to be compatible with default socket factory v1.3.4. For socket factory v1.13.1, use `jdbc:postgresql:///doit`."
 }
 #
 # elasticsearch
