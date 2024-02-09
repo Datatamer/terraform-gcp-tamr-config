@@ -1,6 +1,11 @@
 # GCP Tamr Configuration module
 
-## v3.1.0 - February 5th 2023
+## v3.0.2 - February 9th 2023
+* Added the following variables to handle custom versions of socket factory for cloudsql
+  * tamr_spark_cloudsql_jar
+  * tamr_cloud_sql_jdbc_url
+
+## v3.0.1 - February 5th 2023
 * Add variable of sslmode
 
 ## v3.0.0 - April 28th 2023
