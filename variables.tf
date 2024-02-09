@@ -263,10 +263,10 @@ variable "tamr_cloud_sql_sslmode" {
   description = "if ssl is disabled or not.Possible values include disable , allow , prefer , require , verify-ca and verify-full"
 }
 
-variable "tamr_cloud_sql_jdbc_url" {
+variable "tamr_cloud_sql_jdbc_url_base" {
   type        = string
   default     = "jdbc:postgresql://google/doit"
-  description = "jdbc url to connect to cloud sql. Default is set for to be compatible with default socket factory v1.3.4. For socket factory v1.13.1, use `jdbc:postgresql:///doit`."
+  description = "jdbc base url to connect to cloud sql. Default is set for to be compatible with default socket factory v1.3.4. For socket factory v1.13.1, use `jdbc:postgresql:///doit`."
 }
 #
 # elasticsearch

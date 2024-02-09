@@ -60,13 +60,13 @@ locals {
     tamr_spark_properties_override = indent(4, "\n${local.spark_properties}")
     tamr_spark_cloudsql_jar        = var.tamr_spark_cloudsql_jar
     # sql
-    tamr_cloud_sql_project  = local.tamr_cloud_sql_project
-    tamr_cloud_sql_location = var.tamr_cloud_sql_location
-    tamr_cloud_sql_name     = var.tamr_cloud_sql_name
-    tamr_sql_user           = var.tamr_sql_user
-    tamr_sql_password       = var.tamr_sql_password
-    tamr_cloud_sql_sslmode  = var.tamr_cloud_sql_sslmode
-    tamr_cloud_sql_jdbc_url = var.tamr_cloud_sql_jdbc_url
+    tamr_cloud_sql_project       = local.tamr_cloud_sql_project
+    tamr_cloud_sql_location      = var.tamr_cloud_sql_location
+    tamr_cloud_sql_name          = var.tamr_cloud_sql_name
+    tamr_sql_user                = var.tamr_sql_user
+    tamr_sql_password            = var.tamr_sql_password
+    tamr_cloud_sql_sslmode       = var.tamr_cloud_sql_sslmode
+    tamr_cloud_sql_jdbc_url_base = var.tamr_cloud_sql_jdbc_url_base
     # elastic
     remote_es                = local.remote_es
     tamr_es_enabled          = var.tamr_es_enabled
